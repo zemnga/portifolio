@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="princi.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="projeto.html" onclick="scrollToSection('projetos')">Projetos</a>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!-- Sobre Mim -->
+        <section id="inicio">
+            <div class="sobre-mim-container">
+                <img src="imagens/img.jpg" alt="Foto de perfil" class="sobre-mim-img">
+                <div class="sobre-mim-text">
+                    <h2>Olá! Me chamo João Marcelo </h2>
+                    <p>Sou um desenvolvedor que gosta muito de tecnologia e programação. 
+                        Atualmente Técnico de informáica, Tenho algumas experiências na área da computação e manutenção, 
+                        estou sempre em busca de novos desafios e oportunidades para crescer.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ferramentas de Programação -->
+        <section id="projetos">
+            <h2>Ferramentas de Programação</h2>
+            <ul>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>PHP</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Meu Portfólio. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        function typeWriter(element, text, speed) {
+            let index = 0;
+            function type() {
+                if (index < text.length) {
+                    element.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+    
+        // Aplicar o efeito ao h2
+        const h2Element = document.querySelector('.sobre-mim-text h2');
+        const h2Text = "Olá! Me chamo João Marcelo";
+        h2Element.innerHTML = ""; // Limpa o texto inicial
+        typeWriter(h2Element, h2Text, 100); // 100 ms entre cada letra
+    
+        // Aplicar o efeito ao parágrafo (p) com atraso
+        const pElement = document.querySelector('.sobre-mim-text p');
+        const pText = "Sou um desenvolvedor que gosta muito de tecnologia e programação. Atualmente Técnico de informática, Tenho algumas experiências na área da computação e manutenção, estou sempre em busca de novos desafios e oportunidades para crescer.";
+        pElement.innerHTML = ""; // Limpa o texto inicial
+        setTimeout(() => typeWriter(pElement, pText, 50), 3000); // Inicia após 3 segundos
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,174 @@
+    /* Reset básico */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        position: relative; /* Necessário para posicionar o pseudo-elemento */
+        font-family: Arial, sans-serif;
+        background-image: url('imagens/ima.jpg'); /* Imagem de fundo */
+        background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
+        background-position: center; /* Centraliza a imagem */
+        background-attachment: fixed; /* Fixa a imagem de fundo */
+        color: #fff; /* Texto branco para contraste */
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+ 
+    body::before {
+        content: ""; /* Necessário para criar um pseudo-elemento */
+        position: absolute; /* Posiciona em relação ao body */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* Cor preta com opacidade de 50% */
+        z-index: 0; /* Coloca atrás do conteúdo */
+    }
+    
+    header, .main-content, footer {
+        position: relative; /* Necessário para garantir que esses elementos fiquem acima da sobreposição */
+        z-index: 1; /* Coloca esses elementos acima do pseudo-elemento */
+    }
+    
+    header {
+        background-color: rgba(51, 51, 51, 0.8);
+        padding: 10px 0;
+        text-align: center;
+        position: fixed; /* Fixa o header no topo */
+        top: 0;
+        width: 100%;
+        z-index: 1000; /* Garante que o header fique acima de todo o conteúdo */
+    }
+    
+
+    header .container {
+        display: flex;
+        justify-content: center;
+        gap: 1rem; /* Espaço entre os botões */
+    }
+
+    header .container a {
+        text-decoration: none;
+        color: #1e90ff;
+        background-color: #333;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    header .container a:hover {
+        background-color: #555;
+    }
+
+    .main-content {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+    }
+
+    section {
+        text-align: justify;
+        padding: 1rem;
+        background: rgba(26, 26, 26, 0.7); /* Fundo escuro e semi-transparente */
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        max-width: 800px; /* Largura máxima para centralizar melhor */
+    }
+
+    h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    ul li {
+        background: rgba(51, 51, 51, 0.7); /* Fundo escuro e semi-transparente */
+        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+        border-radius: 4px;
+    }
+
+    footer {
+        background-color: rgba(51, 51, 51, 0.8); /* Cor de fundo semi-transparente */
+        color: #fff;
+        text-align: center;
+        padding: 0.5rem; /* Padding ajustado */
+        font-size: 0.8rem; /* Tamanho da fonte ajustado */
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+
+    a {
+        color: #1e90ff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /* Estilos específicos para a seção "Sobre Mim" */
+    .sobre-mim-container {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Alinha o conteúdo no centro */
+    }
+
+    .sobre-mim-img {
+        max-width: 150px;
+        border-radius: 8px;
+    }
+
+    .sobre-mim-text {
+        flex: 1;
+        margin-left: 1rem;
+    }
+
+/* Seção de Contato */
+#contato {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#contato h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contato-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contato-item {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+
+.contato-item:hover {
+    color: #007bff; /* Cor ao passar o mouse */
+}
+
+.contato-item i {
+    font-size: 24px;
+}

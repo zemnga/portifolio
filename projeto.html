@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Projetos</title>
+    <link rel="stylesheet" href="proj.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" onclick="scrollToSection('inicio')">Início</a>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!-- Coluna 1 -->
+        <div class="coluna1">
+            <section id="projetos1">
+                <div class="project-item">
+                    <div class="carousel">
+                        <img src="imagens/manu.jpg" alt="Laboratório de Manutenção" class="active">
+                        <img src="imagens/manu2.jpg" alt="Laboratório de Manutenção">
+                        <img src="imagens/manu3.jpg" alt="Laboratório de Manutenção">
+                    </div>
+                    <div>
+                        <h3>Laboratório de Manutenção</h3>
+                        <p>Desenvolvimento de um sistema para gestão e manutenção de equipamentos de Informática, permitindo a manutenção, controle e relatórios de uso.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projetos2">
+                <div class="project-item">
+                    <div class="carousel">
+                        <img src="imagens/noit2.png" alt="Noite de Gastronomia" class="active">
+                        <img src="imagens/noit3.jpg" alt="Noite de Gastronomia">
+                    </div>
+                    <div>
+                        <h3>Noite de Gastronomia</h3>
+                        <p>Criação de um site onde na cidade de Tefé ocorreu um evento gastronômico, incluindo informações sobre o evento, galeria de fotos do evento.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Coluna 2 -->
+        <div class="coluna2">
+            <section id="projetos3">
+                <div class="project-item">
+                    <div class="carousel">
+                        <img src="imagens/deli1.png" alt="App de Delivery" class="active">
+                        <img src="imagens/deli2.png" alt="App de Delivery">
+                        <img src="imagens/deli3.png" alt="App de Delivery">
+                    </div>
+                    <div>
+                        <h3>App de Delivery</h3>
+                        <p>Desenvolvimento de um aplicativo de delivery na cidade de Tefé que permite aos usuários realizar pedidos de alimentos e bebidas, com funcionalidades de rastreamento de pedidos e avaliações de produtos.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projetos4">
+                <div class="project-item">
+                    <div class="carousel">
+                        <img src="imagens/auto.png" alt="Página de Aluguel de Automóveis" class="active">
+                        <img src="imagens/" alt="Página de Aluguel de Automóveis">
+                        <img src="imagens/" alt="Página de Aluguel de Automóveis">
+                    </div>
+                    <div>
+                        <h3>Locadora de Automóveis</h3>
+                        <p>Criação de uma plataforma online para aluguel de automóveis, com funcionalidades de busca, reservas, e gerenciamento de frota.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Meu Portfólio. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function initCarousels() {
+            const carousels = document.querySelectorAll('.carousel');
+            carousels.forEach(carousel => {
+                const images = carousel.querySelectorAll('img');
+                let currentImageIndex = 0;
+
+                setInterval(() => {
+                    images[currentImageIndex].classList.remove('active');
+                    currentImageIndex = (currentImageIndex + 1) % images.length;
+                    images[currentImageIndex].classList.add('active');
+                }, 3000);
+            });
+        }
+
+        window.onload = initCarousels;
+    </script>
+</body>
+</html>
